@@ -44,7 +44,6 @@
             <a href="#formulario">Registrar tramite</a>
             <a href="#seguimiento">Ver estado</a>
             <a href="#tasas">Calcular pago</a>
-            <a href="#citas">Reservar cita</a>
             <a href="#contacto">Contactenos</a>
             <a href="#ayuda">Ayuda</a>
         </div>
@@ -333,37 +332,6 @@
             <div class="panel panel-info">
                 <h3>Detalle del calculo</h3>
                 <pre id="tasas-detalle" class="output-box"></pre>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seccion citas: agenda de atencion -->
-    <section class="citas" id="citas">
-        <div class="container grid-two">
-            <div class="panel">
-                <h2>Reservar cita</h2>
-                <p>Reserva una cita para atencion presencial.</p>
-                <form id="citas-form" class="form-area" autocomplete="off">
-                    <label for="cita-nombre">Nombre completo</label>
-                    <input id="cita-nombre" type="text" placeholder="Nombres y apellidos">
-
-                    <label for="cita-dni">DNI</label>
-                    <input id="cita-dni" type="text" maxlength="8" placeholder="8 digitos">
-
-                    <label for="cita-dia">Dia</label>
-                    <select id="cita-dia"></select>
-
-                    <label for="cita-hora">Hora</label>
-                    <select id="cita-hora"></select>
-
-                    <button type="button" id="btn-cita" class="btn-primary">Reservar cita</button>
-                </form>
-                <div id="citas-resultado" class="result-box"></div>
-                <div id="citas-cupos" class="note"></div>
-            </div>
-            <div class="panel panel-info">
-                <h3>Horarios disponibles</h3>
-                <div id="citas-horarios" class="agenda-grid"></div>
             </div>
         </div>
     </section>

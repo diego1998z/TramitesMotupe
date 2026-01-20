@@ -556,10 +556,6 @@ section {
     background: #f2f6f2;
 }
 
-.citas {
-    background: #f6f2ef;
-}
-
 .tarifas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -594,27 +590,6 @@ section {
     padding: 6px 10px;
     border-radius: 999px;
     font-size: 12px;
-}
-
-.agenda-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.agenda-slot {
-    padding: 10px;
-    background: var(--white);
-    border: 1px solid #d6e1d7;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-.agenda-slot.ocupado {
-    background: #f1e8e6;
-    border-color: #d9b6ae;
-    color: #7a3a2c;
 }
 
 /* Seccion de contacto */

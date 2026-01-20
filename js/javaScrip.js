@@ -1,7 +1,7 @@
-// Parametro fijo para costo extra por atencion urgente
+// Unidad 1: constantes y tipos de datos (number) para configurar reglas
 const COSTO_URGENCIA = 20;
 
-// Datos base de tramites municipales
+// Unidad 1: arreglos de objetos, tipos de datos y uso de const
 const tramites = [
     {
         id: 1,
@@ -53,7 +53,7 @@ const tramites = [
     }
 ];
 
-// Datos base de servicios municipales
+// Unidad 1: arreglos de objetos y propiedades
 const servicios = [
     {
         id: 1,
@@ -81,7 +81,7 @@ const servicios = [
     }
 ];
 
-// Tarifas referenciales
+// Unidad 1: objetos en arreglos y operadores numericos
 const tarifas = [
     { concepto: "Licencia de funcionamiento", costo: 120 },
     { concepto: "Duplicado de licencia", costo: 30 },
@@ -89,31 +89,22 @@ const tarifas = [
     { concepto: "Copia certificada", costo: 15 }
 ];
 
-// Horarios de atencion
+// Unidad 1: arreglo bidimensional y strings
 const horarios = [
     ["Lunes a Viernes", "08:00 - 16:00"],
     ["Sabado", "09:00 - 12:00"]
 ];
 
-// Agenda de citas (arreglo bidimensional)
-const diasCitas = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
-const agendaCitas = [
-    ["08:00", "09:00", "10:00"],
-    ["14:00", "15:00", "16:00"]
-];
-const citasReservadas = [];
-var cuposDisponibles = diasCitas.length * agendaCitas.length * agendaCitas[0].length;
-
-// Contadores de ejemplo con var y let
+// Unidad 1: declaraciones con var y let
 var contadorSolicitudes = 0;
 let ultimoRegistro = 2000;
 
-// Catalogo unificado para select y busquedas
+// Unidad 1: spread operator, arrow functions y map
 const tramitesConTipo = tramites.map((item) => ({ ...item, tipo: "tramite" }));
 const serviciosConTipo = servicios.map((item) => ({ ...item, tipo: "servicio" }));
 const catalogo = [...tramitesConTipo, ...serviciosConTipo];
 
-// Sistema de expedientes con metodos y uso de this
+// Unidad 1: objetos con metodos, this y bucle while
 const sistemaExpedientes = {
     prefijo: "MT",
     ultimoCodigo: 1200,
@@ -150,7 +141,7 @@ const sistemaExpedientes = {
     }
 };
 
-// Tipos de datos de ejemplo (number, bigint, string, boolean, null, undefined, object, symbol)
+// Unidad 1: tipos de datos (number, bigint, string, boolean, null, undefined, object, symbol)
 const idSimbolo = Symbol("expediente");
 const tiposDemo = {
     numero: 120,
@@ -163,22 +154,22 @@ const tiposDemo = {
     simbolo: idSimbolo
 };
 
-// Utilidad para mostrar costos
+// Unidad 1: funciones con retorno, operadores y template literals
 const formatearCosto = (monto) => {
     return monto === 0 ? "Gratis" : `S/ ${monto.toFixed(2)}`;
 };
 
-// Construye lista HTML de requisitos
+// Unidad 1: map, join y manipulacion de cadenas
 const construirRequisitos = (lista) => {
     return lista.map((req) => `<li>${req}</li>`).join("");
 };
 
-// Limpia espacios repetidos con funcion tradicional
+// Unidad 1: funcion tradicional, RegExp y replace
 function limpiarEspacios(texto) {
     return texto.replace(/\s+/g, " ").trim();
 }
 
-// Normaliza palabras comunes usando replaceAll
+// Unidad 1: replaceAll, forEach y operadores de asignacion
 const normalizarTexto = (texto) => {
     const reemplazos = [
         ["muni", "municipalidad"],
@@ -192,12 +183,12 @@ const normalizarTexto = (texto) => {
     return resultado;
 };
 
-// Funciones personalizadas de cadenas
+// Unidad 1: funciones personalizadas y substr/indexOf
 const left = (texto, cantidad) => texto.substr(0, cantidad);
 const right = (texto, cantidad) => texto.substr(texto.length - cantidad);
 const contains = (texto, termino) => texto.indexOf(termino) !== -1;
 
-// Render de tarjetas de tramites/servicios
+// Unidad 1: salidas en DOM, template literals y map
 const renderCards = (lista, containerId, tipo) => {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -233,7 +224,7 @@ const renderCards = (lista, containerId, tipo) => {
         .join("");
 };
 
-// Render de tarjetas de tarifas
+// Unidad 1: salidas en DOM y map
 const renderTarifas = (lista) => {
     const container = document.getElementById("tarifas-container");
     if (!container) return;
@@ -250,7 +241,7 @@ const renderTarifas = (lista) => {
         .join("");
 };
 
-// Render de resumen estadistico
+// Unidad 1: bucle for, operadores y salida en DOM
 const renderStats = () => {
     const statsContainer = document.getElementById("stats-container");
     if (!statsContainer) return;
@@ -280,7 +271,7 @@ const renderStats = () => {
     `;
 };
 
-// Llena un select con el catalogo general
+// Unidad 1: map, DOM y funciones reutilizables
 const llenarSelectCatalogo = (selectId) => {
     const select = document.getElementById(selectId);
     if (!select) return;
@@ -292,14 +283,14 @@ const llenarSelectCatalogo = (selectId) => {
     select.innerHTML = '<option value="">Seleccione una opcion</option>' + opciones.join("");
 };
 
-// Llena selects usados en formularios
+// Unidad 1: funciones y reutilizacion
 const llenarSelects = () => {
     llenarSelectCatalogo("tramite-select");
     llenarSelectCatalogo("tasas-select");
     llenarSelectCatalogo("for-tramite");
 };
 
-// Busca un item por clave "tipo-id"
+// Unidad 1: split, Number, condicionales y arreglos
 const obtenerItemPorClave = (clave) => {
     const partes = clave.split("-");
     const tipo = partes[0];
@@ -313,7 +304,7 @@ const obtenerItemPorClave = (clave) => {
     return lista.find((item) => item.id === id) || null;
 };
 
-// Muestra el detalle del item seleccionado
+// Unidad 1: manipulacion de DOM como salida
 const mostrarDetalleSeleccion = (item) => {
     const detalle = document.getElementById("detalle-seleccion");
     if (!detalle) return;
@@ -331,7 +322,7 @@ const mostrarDetalleSeleccion = (item) => {
     `;
 };
 
-// Genera una solicitud formal y analiza el texto
+// Unidad 1: concatenacion, template literals, RegExp, search/match, replace, encodeURI/decodeURI y try/catch
 const generarSolicitud = () => {
     const nombreInput = document.getElementById("sol-nombre");
     const dniInput = document.getElementById("sol-dni");
@@ -424,7 +415,7 @@ const generarSolicitud = () => {
     contadorSolicitudes += 1;
 };
 
-// Valida datos del formulario de tramite
+// Unidad 1: RegExp, if/else y operadores logicos
 const validarFormulario = (datos) => {
     const errores = [];
     const correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(datos.correo);
@@ -463,7 +454,7 @@ const validarFormulario = (datos) => {
     return errores;
 };
 
-// Registra una solicitud y genera expediente
+// Unidad 1: objetos, metodos, JSON y operador this
 const registrarFormulario = () => {
     const nombreInput = document.getElementById("for-nombre");
     const dniInput = document.getElementById("for-dni");
@@ -524,7 +515,7 @@ const registrarFormulario = () => {
     renderSeguimientoLista();
 };
 
-// Renderiza lista corta de expedientes recientes
+// Unidad 1: forEach, slice y salida DOM
 const renderSeguimientoLista = () => {
     const container = document.getElementById("seguimiento-lista");
     if (!container) return;
@@ -537,7 +528,7 @@ const renderSeguimientoLista = () => {
     container.innerHTML = html || '<span class="pill">Sin registros</span>';
 };
 
-// Busca un expediente por codigo y DNI
+// Unidad 1: condicionales, funciones y salida DOM
 const buscarSeguimiento = () => {
     const codigoInput = document.getElementById("seg-codigo");
     const dniInput = document.getElementById("seg-dni");
@@ -568,7 +559,7 @@ const buscarSeguimiento = () => {
     `;
 };
 
-// Calcula tasas y muestra el detalle del pago
+// Unidad 1: operadores aritmeticos, %, **, bucle for, BigInt e IEEE-754
 const calcularTasas = () => {
     const select = document.getElementById("tasas-select");
     const copiasInput = document.getElementById("tasas-copias");
@@ -641,93 +632,14 @@ const calcularTasas = () => {
     nota.textContent = `Codigo de pago: ${codigoPago.toString()}. Ejemplo IEEE-754: 0.1 + 0.2 = ${ejemploIeee}`;
 };
 
-// Carga opciones de citas en selects
-const cargarSelectCitas = () => {
-    const diaSelect = document.getElementById("cita-dia");
-    const horaSelect = document.getElementById("cita-hora");
-    if (!diaSelect || !horaSelect) return;
-
-    diaSelect.innerHTML =
-        '<option value="">Seleccione un dia</option>' +
-        diasCitas.map((dia) => `<option value="${dia}">${dia}</option>`).join("");
-
-    const horas = [];
-    for (let fila = 0; fila < agendaCitas.length; fila += 1) {
-        for (let col = 0; col < agendaCitas[fila].length; col += 1) {
-            horas.push(agendaCitas[fila][col]);
-        }
-    }
-
-    horaSelect.innerHTML =
-        '<option value="">Seleccione una hora</option>' +
-        horas.map((hora) => `<option value="${hora}">${hora}</option>`).join("");
-};
-
-// Renderiza la agenda de citas
-const renderAgenda = () => {
-    const container = document.getElementById("citas-horarios");
-    if (!container) return;
-
-    let html = "";
-    for (let d = 0; d < diasCitas.length; d += 1) {
-        for (let t = 0; t < agendaCitas.length; t += 1) {
-            for (let h = 0; h < agendaCitas[t].length; h += 1) {
-                const hora = agendaCitas[t][h];
-                const clave = diasCitas[d] + "-" + hora;
-                const ocupado = citasReservadas.includes(clave);
-                html += `<div class="agenda-slot${ocupado ? " ocupado" : ""}">${diasCitas[d]} ${hora}</div>`;
-            }
-        }
-    }
-
-    container.innerHTML = html;
-};
-
-// Registra una cita y descuenta cupos
-const reservarCita = () => {
-    const nombreInput = document.getElementById("cita-nombre");
-    const dniInput = document.getElementById("cita-dni");
-    const diaSelect = document.getElementById("cita-dia");
-    const horaSelect = document.getElementById("cita-hora");
-    const resultado = document.getElementById("citas-resultado");
-    const cuposBox = document.getElementById("citas-cupos");
-
-    if (!nombreInput || !dniInput || !diaSelect || !horaSelect || !resultado || !cuposBox) {
-        return;
-    }
-
-    const nombre = nombreInput.value.trim();
-    const dni = dniInput.value.trim();
-    const dia = diaSelect.value;
-    const hora = horaSelect.value;
-
-    if (!nombre || !esDniValido(dni) || !dia || !hora) {
-        resultado.textContent = "Complete nombre, DNI y horario.";
-        return;
-    }
-
-    const clave = `${dia}-${hora}`;
-    if (citasReservadas.includes(clave)) {
-        resultado.textContent = "Horario ocupado, seleccione otro.";
-        return;
-    }
-
-    citasReservadas.push(clave);
-    cuposDisponibles--;
-
-    resultado.textContent = `Cita registrada para ${nombre} el ${dia} a las ${hora}.`;
-    cuposBox.textContent = `Cupos disponibles: ${cuposDisponibles}`;
-    renderAgenda();
-};
-
-// Validacion basica de DNI con Number.isSafeInteger
+// Unidad 1: Number.isSafeInteger (IEEE-754) y boolean
 const esDniValido = (dni) => {
     const limpio = dni.trim();
     const numero = Number(limpio);
     return limpio.length === 8 && Number.isSafeInteger(numero);
 };
 
-// Procesa la consulta con validaciones y try/catch
+// Unidad 1: try/catch, condicionales, alert y console
 const consultarTramite = () => {
     const dniInput = document.getElementById("dni-input");
     const select = document.getElementById("tramite-select");
@@ -773,7 +685,7 @@ const consultarTramite = () => {
     }
 };
 
-// Muestra requisitos en un alert
+// Unidad 1: alert y manejo de cadenas
 const mostrarRequisitos = (tipo, id) => {
     const lista = tipo === "tramite" ? tramites : servicios;
     const item = lista.find((entrada) => entrada.id === id);
@@ -787,7 +699,7 @@ const mostrarRequisitos = (tipo, id) => {
     alert(detalle.toUpperCase().trim());
 };
 
-// Filtra tramites y servicios al escribir
+// Unidad 1: eventos (input) y filter
 const activarBusqueda = () => {
     const buscador = document.getElementById("busqueda");
     if (!buscador) return;
@@ -803,7 +715,7 @@ const activarBusqueda = () => {
     });
 };
 
-// Escucha clicks en botones de tarjeta
+// Unidad 1: eventos (click) y manejo de DOM
 const activarBotones = () => {
     document.addEventListener("click", (event) => {
         const boton = event.target.closest(".card-btn");
@@ -817,7 +729,7 @@ const activarBotones = () => {
     });
 };
 
-// Inicializacion general al cargar el DOM
+// Unidad 1: evento DOMContentLoaded y ejecucion de funciones
 document.addEventListener("DOMContentLoaded", () => {
     const carouselElement = document.querySelector("#carouselExampleDark");
     if (carouselElement && window.bootstrap) {
@@ -833,8 +745,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTarifas(tarifas);
     renderStats();
     llenarSelects();
-    cargarSelectCitas();
-    renderAgenda();
     renderSeguimientoLista();
     activarBusqueda();
     activarBotones();
@@ -845,8 +755,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const botonFormulario = document.getElementById("btn-formulario");
     const botonSeguimiento = document.getElementById("btn-seguimiento");
     const botonTasas = document.getElementById("btn-tasas");
-    const botonCita = document.getElementById("btn-cita");
-    const cuposBox = document.getElementById("citas-cupos");
 
     if (select) {
         select.onchange = () => {
@@ -872,14 +780,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (botonTasas) {
         botonTasas.onclick = calcularTasas;
-    }
-
-    if (botonCita) {
-        botonCita.onclick = reservarCita;
-    }
-
-    if (cuposBox) {
-        cuposBox.textContent = `Cupos disponibles: ${cuposDisponibles}`;
     }
 
     console.log("Tipos de datos demo", tiposDemo);
