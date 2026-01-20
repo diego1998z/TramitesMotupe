@@ -245,6 +245,22 @@ section {
     background: rgba(255, 255, 255, 0.6);
 }
 
+/* Seccion nosotros */
+.nosotros {
+    background: #f6f5f0;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 1.2fr) minmax(240px, 1fr);
+    gap: 24px;
+}
+
+.nosotros-column {
+    display: grid;
+    gap: 24px;
+}
+
 /* Layout en dos columnas */
 .grid-two {
     display: grid;
